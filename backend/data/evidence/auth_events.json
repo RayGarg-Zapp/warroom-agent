@@ -1,0 +1,65 @@
+[
+  {
+    "event_id": "evt-1042",
+    "timestamp": "2026-03-31T07:54:11Z",
+    "event_type": "admin_session_started",
+    "actor_user_id": "auth0|support_admin_17",
+    "actor_email": "support-admin17@company.com",
+    "client_id": "legacy-support-console",
+    "tenant_id": "acme-bank",
+    "ip": "198.51.100.17",
+    "geo": "San Jose, CA",
+    "details": "Privileged support session started with elevated tenant admin permissions"
+  },
+  {
+    "event_id": "evt-1043",
+    "timestamp": "2026-03-31T07:56:23Z",
+    "event_type": "mfa_reset_initiated",
+    "actor_user_id": "auth0|support_admin_17",
+    "actor_email": "support-admin17@company.com",
+    "client_id": "legacy-support-console",
+    "tenant_id": "acme-bank",
+    "target_user_id": "user-8821",
+    "ip": "198.51.100.17",
+    "geo": "San Jose, CA",
+    "details": "Forced MFA reset triggered through admin support workflow"
+  },
+  {
+    "event_id": "evt-1044",
+    "timestamp": "2026-03-31T07:58:09Z",
+    "event_type": "mfa_reset_initiated",
+    "actor_user_id": "auth0|support_admin_17",
+    "actor_email": "support-admin17@company.com",
+    "client_id": "legacy-support-console",
+    "tenant_id": "northstar-health",
+    "target_user_id": "user-1933",
+    "ip": "198.51.100.17",
+    "geo": "San Jose, CA",
+    "details": "Forced MFA reset triggered through admin support workflow"
+  },
+  {
+    "event_id": "evt-1045",
+    "timestamp": "2026-03-31T08:01:42Z",
+    "event_type": "mfa_reset_initiated",
+    "actor_user_id": "auth0|support_admin_17",
+    "actor_email": "support-admin17@company.com",
+    "client_id": "legacy-support-console",
+    "tenant_id": "redwood-manufacturing",
+    "target_user_id": "user-4108",
+    "ip": "198.51.100.17",
+    "geo": "San Jose, CA",
+    "details": "Forced MFA reset triggered through admin support workflow"
+  },
+  {
+    "event_id": "evt-1048",
+    "timestamp": "2026-03-31T08:06:17Z",
+    "event_type": "anomalous_login_failure_spike",
+    "actor_user_id": null,
+    "actor_email": null,
+    "client_id": "legacy-support-console",
+    "tenant_id": "multiple",
+    "ip": null,
+    "geo": null,
+    "details": "Login failure spike observed across multiple enterprise tenants after admin workflow activity"
+  }
+]

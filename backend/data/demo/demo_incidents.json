@@ -1,0 +1,72 @@
+[
+  {
+    "source": "slack",
+    "slack_channel_id": "C_INCIDENTS",
+    "slack_message_ts": "1710473400.000100",
+    "raw_text": "P1 incident: users across North America cannot log in to the customer portal after this morning's IAM certificate update. MFA also appears impacted for some tenants. Multiple enterprise customers reporting outage.",
+    "normalized_text": "p1 incident users across north america cannot log in to the customer portal after this morning iam certificate update mfa impacted multiple enterprise customers reporting outage",
+    "title": "North America Login Outage — IAM Certificate Failure",
+    "severity": "P1",
+    "confidence": 0.94,
+    "summary": "Authentication failures across North America after IAM certificate update; MFA impacted for some tenants.",
+    "probable_domain": "identity",
+    "impacted_systems_json": ["IAM Gateway", "SSO Service", "MFA Provider", "Customer Portal"],
+    "status": "awaiting_approval"
+  },
+  {
+    "source": "slack",
+    "slack_channel_id": "C_INCIDENTS",
+    "slack_message_ts": "1710477400.000200",
+    "raw_text": "P2 incident: increased latency in EU checkout flow, payment confirmation delayed for some users, no full outage observed.",
+    "normalized_text": "p2 incident increased latency in eu checkout flow payment confirmation delayed for some users no full outage observed",
+    "title": "EU Payment Latency",
+    "severity": "P2",
+    "confidence": 0.87,
+    "summary": "Checkout latency affecting EU region with delayed payment confirmation but no full outage.",
+    "probable_domain": "application",
+    "impacted_systems_json": ["Checkout Service", "Payment API"],
+    "status": "triaged"
+  },
+  {
+    "source": "slack",
+    "slack_channel_id": "C_INCIDENTS",
+    "slack_message_ts": "1710481400.000300",
+    "raw_text": "P2 incident: CDN cache serving stale static assets after deployment, users seeing inconsistent front-end behavior.",
+    "normalized_text": "p2 incident cdn cache serving stale static assets after deployment users seeing inconsistent front end behavior",
+    "title": "CDN Cache Stale Assets",
+    "severity": "P2",
+    "confidence": 0.82,
+    "summary": "Stale CDN assets after deployment causing inconsistent UI behavior.",
+    "probable_domain": "cloud",
+    "impacted_systems_json": ["CDN", "Frontend Assets"],
+    "status": "triaged"
+  },
+  {
+  "source": "slack",
+  "slack_channel_id": "C_INCIDENTS",
+  "slack_message_ts": "1710485400.000400",
+  "raw_text": "P1 security incident: suspicious admin activity detected after a privileged support session. Multiple enterprise tenants report forced MFA resets and anomalous login failures. Possible misuse of identity admin privileges or support workflow token.",
+  "normalized_text": "p1 security incident suspicious admin activity detected after a privileged support session multiple enterprise tenants report forced mfa resets and anomalous login failures possible misuse of identity admin privileges or support workflow token",
+  "title": "Suspicious Admin Activity — Forced MFA Reset Pattern",
+  "severity": "P1",
+  "confidence": 0.96,
+  "summary": "Suspicious admin activity may have triggered forced MFA resets and anomalous login failures across multiple enterprise tenants.",
+  "probable_domain": "security",
+  "impacted_systems_json": ["Admin Console", "Session Service", "MFA Service", "Tenant Directory"],
+  "status": "awaiting_approval"
+},
+{
+  "source": "slack",
+  "slack_channel_id": "C_INCIDENTS",
+  "slack_message_ts": "1710489400.000500",
+  "raw_text": "P1 incident: customer portal outage after application config drift. Service now listens on port 81, but network policy still permits only port 80. Requests are timing out across production.",
+  "normalized_text": "p1 incident customer portal outage after application config drift service now listens on port 81 but network policy still permits only port 80 requests are timing out across production",
+  "title": "Config Drift Outage — Port 81 Not Allowed by Network Policy",
+  "severity": "P1",
+  "confidence": 0.97,
+  "summary": "Service port changed to 81 but network policy still allows only 80, causing production timeouts.",
+  "probable_domain": "cloud",
+  "impacted_systems_json": ["Customer Portal", "Service Config", "Ingress Policy", "Network Policy"],
+  "status": "awaiting_approval"
+}
+]

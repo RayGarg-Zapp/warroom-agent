@@ -1,0 +1,20 @@
+[
+  {
+    "tenant_id": "acme-bank",
+    "severity": "high",
+    "affected_users": 84,
+    "symptom": "forced MFA resets followed by login failures"
+  },
+  {
+    "tenant_id": "northstar-health",
+    "severity": "high",
+    "affected_users": 52,
+    "symptom": "forced MFA resets followed by login failures"
+  },
+  {
+    "tenant_id": "redwood-manufacturing",
+    "severity": "medium",
+    "affected_users": 31,
+    "symptom": "forced MFA resets followed by login failures"
+  }
+]

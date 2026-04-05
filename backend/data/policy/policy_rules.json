@@ -1,0 +1,132 @@
+{
+  "risk_levels": {
+    "read_slack_channel": "low",
+    "classify_incident": "low",
+    "lookup_known_issues": "low",
+    "recommend_responders": "medium",
+    "draft_notifications": "medium",
+    "create_zoom_meeting": "low",
+    "create_calendar_event": "low",
+    "send_slack_dm": "medium",
+    "send_email": "high",
+    "revoke_sessions": "high",
+    "disable_client": "high",
+    "freeze_admin_workflow": "high",
+    "hunt_auth_events": "medium",
+    "github_app_repo_update": "high",
+    "github_network_repo_update": "high"
+  },
+  "step_up_rules": {
+    "require_step_up_if_p1_and_recipients_gte": 5,
+    "require_step_up_if_executive_recipient": true,
+    "require_step_up_if_external_domain": true,
+    "require_step_up_if_github_repo_change": true
+  },
+  "severity_rules": {
+    "p1_keywords": [
+      "p1",
+      "authentication outage",
+      "login outage",
+      "multiple enterprise customers",
+      "north america",
+      "production down",
+      "mfa impacted",
+      "forced mfa reset",
+      "suspicious admin activity",
+      "privileged session",
+      "multiple tenants",
+      "anomalous login failures",
+      "config drift",
+      "port 81",
+      "network policy",
+      "firewall rule",
+      "security group",
+      "ingress rule",
+      "requests are timing out across production"
+    ],
+    "p2_keywords": [
+      "p2",
+      "degraded service",
+      "latency",
+      "partial outage",
+      "regional issue",
+      "delayed processing"
+    ]
+  },
+  "domain_keyword_map": {
+    "identity": [
+      "sso",
+      "login",
+      "mfa",
+      "iam",
+      "token",
+      "directory",
+      "certificate",
+      "saml",
+      "authentication"
+    ],
+    "network": [
+      "vpc",
+      "routing",
+      "dns",
+      "latency",
+      "packet loss",
+      "network",
+      "network policy",
+      "firewall rule",
+      "security group",
+      "ingress rule",
+      "inbound port",
+      "allow 81",
+      "permit only 80"
+    ],
+    "cloud": [
+      "region",
+      "cdn",
+      "infrastructure",
+      "failover",
+      "cloud",
+      "config drift",
+      "service port",
+      "port 81",
+      "port 80",
+      "customer portal",
+      "service config"
+    ],
+    "security": [
+      "attack",
+      "compromised",
+      "suspicious traffic",
+      "waf",
+      "security",
+      "admin",
+      "privileged",
+      "session",
+      "mfa reset",
+      "tenant abuse",
+      "token misuse"
+    ],
+    "platform": [
+      "eks",
+      "cluster",
+      "service mesh",
+      "pod",
+      "ingress",
+      "platform"
+    ],
+    "application": [
+      "portal",
+      "checkout",
+      "payment",
+      "frontend",
+      "application"
+    ],
+    "database": [
+      "replica",
+      "query timeout",
+      "db",
+      "database",
+      "connection pool"
+    ]
+  }
+}

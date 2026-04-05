@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 222 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 30% 12%;
+
+    --primary: 220 72% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 222 30% 12%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 220 14% 94%;
+    --accent-foreground: 222 30% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 220 72% 50%;
+    --radius: 0.625rem;
+
+    /* Severity tokens */
+    --severity-p1: 0 72% 51%;
+    --severity-p1-bg: 0 72% 96%;
+    --severity-p2: 38 92% 50%;
+    --severity-p2-bg: 38 92% 95%;
+    --severity-info: 220 72% 50%;
+    --severity-info-bg: 220 72% 96%;
+    --severity-success: 152 60% 40%;
+    --severity-success-bg: 152 60% 95%;
+
+    /* Status tokens */
+    --status-pending: 38 92% 50%;
+    --status-pending-bg: 38 92% 95%;
+    --status-approved: 152 60% 40%;
+    --status-approved-bg: 152 60% 95%;
+    --status-denied: 0 72% 51%;
+    --status-denied-bg: 0 72% 96%;
+    --status-executed: 152 60% 40%;
+    --status-executed-bg: 152 60% 95%;
+
+    /* AI surface */
+    --ai-surface: 245 58% 96%;
+    --ai-border: 245 40% 88%;
+    --ai-accent: 245 58% 52%;
+
+    /* Navy anchor */
+    --navy: 222 47% 11%;
+    --navy-foreground: 220 20% 97%;
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 220 72% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 40% 18%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 220 72% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card border border-border rounded-xl shadow-sm;
+  }
+  .ai-surface {
+    background: hsl(var(--ai-surface));
+    border: 1px solid hsl(var(--ai-border));
+  }
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(220 50% 20%) 100%);
+  }
+  .text-mono {
+    @apply font-mono text-sm;
+  }
+}
