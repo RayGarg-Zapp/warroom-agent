@@ -116,12 +116,13 @@ WarRoom uses three Auth0 applications: a **SPA** (frontend), an **M2M** (backend
 VITE_AUTH0_DOMAIN=dev-xxxxx.us.auth0.com
 VITE_AUTH0_CLIENT_ID=<spa-client-id>
 VITE_AUTH0_AUDIENCE=https://warroom-api
+VITE_AUTH0_SCOPE=openid profile email offline_access read:incidents read:audit read:integrations approve:actions execute:actions admin:config
 
 # Backend
 AUTH0_DOMAIN=dev-xxxxx.us.auth0.com
+AUTH0_AUDIENCE=https://warroom-api
 AUTH0_CLIENT_ID=<m2m-client-id>
 AUTH0_CLIENT_SECRET=<m2m-client-secret>
-AUTH0_AUDIENCE=https://warroom-api
 AUTH0_CUSTOM_API_CLIENT_ID=<token-vault-client-id>
 AUTH0_CUSTOM_API_CLIENT_SECRET=<token-vault-client-secret>
 AUTH0_TOKEN_ENDPOINT=https://dev-xxxxx.us.auth0.com/oauth/token
