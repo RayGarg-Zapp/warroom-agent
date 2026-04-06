@@ -21,7 +21,7 @@ Step-by-step instructions for setting up all applications, external services and
 
 ## 1. Auth0 — Core Identity (Authentication & API)
 
-WarRoom uses four Auth0 applications and one Auth0 API resource server: a **SPA** application for the frontend console, a **M2M** application for backend Auth0 service operations, a **Custom API client** application used for Token Vault-related flows, and a **Regular Web** application that acts as the confidential client for CIBA backchannel authentication.
+WarRoom uses four Auth0 applications and one Auth0 API resource server: a **SPA** application for the frontend console, a **M2M** application for backend Auth0 service operations, a **Custom API client** application used for Token Vault-related flows, and a **Regular Web** application that acts as the confidential client for CIBA backchannel authentication, and the **WarRoom API resource server** that defines the application permissions and audience.
 
 ### Create the Auth0 Tenant
 
@@ -106,8 +106,8 @@ WarRoom uses four Auth0 applications and one Auth0 API resource server: a **SPA*
 
 1. Go to **User Management > Roles > Create Role**
 2. Create at least two roles:
-   - **WarRoom Operator** — Role for WarRoom Console users to access the console
-   - **remediation_executor** — Role for executing sensitive github remediation actions
+   - **WarRoom Operator** — Role for WarRoom Console users to access the console. To assign permissions, select WarRoom API, and select all permissions EXCEPT execute:remediation. 
+   - **remediation_executor** — Role for executing sensitive github remediation actions. To assign permissions, select WarRoom API, and select execute:remediation. 
 3. Assign both roles to App Operator and Network Operator user profiles
 
 
