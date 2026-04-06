@@ -1,6 +1,6 @@
 # Integrations Setup Guide
 
-Step-by-step instructions for setting up all external services and API credentials required by WarRoom Agent.
+Step-by-step instructions for setting up all applications, external services and API credentials required by WarRoom Agent.
 
 ---
 
@@ -21,7 +21,7 @@ Step-by-step instructions for setting up all external services and API credentia
 
 ## 1. Auth0 — Core Identity (Authentication & API)
 
-WarRoom uses three Auth0 applications: a **SPA** (frontend), an **M2M** (backend), and a **CIBA** app (backchannel auth).
+WarRoom uses four Auth0 applications and one Auth0 API resource server: a **SPA** application for the frontend console, a **M2M** application for backend Auth0 service operations, a **Custom API client** application used for Token Vault-related flows, and a **Regular Web** application that acts as the confidential client for CIBA backchannel authentication.
 
 ### Create the Auth0 Tenant
 
