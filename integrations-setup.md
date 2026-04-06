@@ -6,15 +6,16 @@ Step-by-step instructions for setting up all external services and API credentia
 
 ## Table of Contents
 
-1. [Auth0 — Core Authentication](#1-auth0--core-authentication)
-2. [Auth0 — CIBA (Backchannel Authentication)](#2-auth0--ciba-backchannel-authentication)
-3. [Auth0 — FGA (Fine-Grained Authorization)](#3-auth0--fga-fine-grained-authorization)
-4. [Anthropic Claude (AI/LLM)](#4-anthropic-claude-aillm)
-5. [Slack](#5-slack)
-6. [Zoom](#6-zoom)
-7. [Google Calendar](#7-google-calendar)
-8. [Email (SMTP / Gmail)](#8-email-smtp--gmail)
-9. [GitHub Remediation Repos](#9-github-remediation-repos)
+1. [Auth0 — Core Identity (Authentication & API)](#1-auth0--core-authentication)
+2. [Auth0 — Token Vault/Connected Accounts](#2-auth0--tokenvault-connectedaccounts)
+3. [Auth0 — CIBA (Backchannel Authentication)](#3-auth0--ciba-backchannel-authentication)
+4. [Auth0 — FGA (Fine-Grained Authorization)](#4-auth0--fga-fine-grained-authorization)
+5. [Anthropic Claude (AI/LLM)](#5-anthropic-claude-aillm)
+6. [Slack](#6-slack)
+7. [Zoom](#7-zoom)
+8. [Google Calendar](#8-google-calendar)
+9. [Email (SMTP / Gmail)](#9-email-smtp--gmail)
+10. [GitHub Remediation Repos](#10-github-remediation-repos)
 
 ---
 
