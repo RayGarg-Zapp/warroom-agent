@@ -326,7 +326,13 @@ type remediation
 
 ### Write Tuples
 
-Write relationship tuples to define who can do what:
+WarRoom writes FGA tuples automatically during incident ingestion and remediation generation.
+
+If you are testing the system end-to-end, no manual tuple creation is required.
+
+Optional Manual Tuple Testing
+
+If you want to test authorization manually in the FGA dashboard, you can create relationship tuples such as:
 
 ```
 user:auth0|<user-id> can_approve incident:<incident-id>
@@ -347,7 +353,7 @@ FGA_API_AUDIENCE=https://api.us1.fga.dev/
 
 ---
 
-## 4. Anthropic Claude (AI/LLM)
+## 5. Anthropic Claude (AI/LLM)
 
 Used for incident classification, action planning, and the AI chat assistant.
 
@@ -366,7 +372,7 @@ ANTHROPIC_MODEL=claude-sonnet-4-5
 
 ---
 
-## 5. Slack
+## 6. Slack
 
 Used for incident detection (polling channels) and responder notifications (DMs).
 
@@ -385,7 +391,6 @@ Used for incident detection (polling channels) and responder notifications (DMs)
    - `chat:write` — send messages
    - `im:write` — send DMs
    - `users:read` — lookup user info
-   - `users:read.email` — lookup users by email
 
 ### Install to Workspace
 
@@ -415,7 +420,7 @@ SLACK_POLL_INTERVAL=10
 
 ---
 
-## 6. Zoom
+## 7. Zoom
 
 Used to automatically create war room meetings for incident coordination.
 
@@ -428,9 +433,10 @@ Used to automatically create war room meetings for incident coordination.
 ### Configure Scopes
 
 1. Under **Scopes**, add:
-   - `meeting:write:admin` — create meetings
-   - `meeting:read:admin` — read meeting details
-   - `user:read:admin` — lookup users
+   - `meeting:write:meeting:master` — Create a meeting for a user
+   - `meeting:write:meeting:admin` — Create a meeting for a user
+   - `user:read:list_users:master` — View users
+   - `user:read:list_users:admin` — View users
 
 ### Activate the App
 
@@ -448,7 +454,7 @@ ZOOM_ACCOUNT_ID=<account-id>
 
 ---
 
-## 7. Google Calendar
+## 8. Google Calendar
 
 Used to create bridge call calendar events with responders as attendees.
 
@@ -465,16 +471,6 @@ Used to create bridge call calendar events with responders as attendees.
 3. Skip the optional role/access steps
 4. Click on the created service account > **Keys > Add Key > Create New Key**
 5. Choose **JSON** and download the key file
-
-### Enable Domain-Wide Delegation (Google Workspace only)
-
-If using Google Workspace:
-
-1. Go to the service account details > **Enable domain-wide delegation**
-2. In Google Workspace Admin Console (admin.google.com):
-   - Go to **Security > API controls > Domain-wide delegation**
-   - Add a new client with the service account's Client ID
-   - Scopes: `https://www.googleapis.com/auth/calendar`
 
 ### For Personal Gmail Accounts
 
@@ -530,13 +526,7 @@ WarRoom commits config changes to GitHub repos as part of remediation. Two repos
    - **Network Remediation** (e.g., `your-org/warroom-network-remediation`)
      - Add a `network-policy.json` file with your network policy configuration
 
-### Create a Personal Access Token
-
-1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
-2. Generate a **Fine-grained token** or **Classic token** with:
-   - `repo` scope (full control of repositories)
-3. Copy the token
-4. The backend uses this token via environment or the Auth0 Token Vault integration
+Follow the official Auth0 AI Agents Github Setup Guide and reate the Github App: https://auth0.com/ai/docs/integrations/github
 
 ### Env vars produced
 
@@ -553,13 +543,13 @@ GITHUB_NETWORK_REMEDIATION_PATH=network-policy.json
 
 Use this checklist to verify all integrations are configured:
 
-- [ ] Auth0 tenant created with SPA, M2M, and CIBA applications
+- [ ] Auth0 tenant created with SPA, M2M, Custom API Client, and Regular Web App (CIBA) applications
 - [ ] Auth0 API created with all required scopes
 - [ ] Auth0 SPA callback/logout/origin URLs configured
 - [ ] Auth0 social connections enabled (GitHub, Google, Slack)
 - [ ] Auth0 CIBA enabled and configured with poll mode
 - [ ] Auth0 FGA store and authorization model created
-- [ ] Auth0 users created (operator + remediation owners)
+- [ ] Auth0 users created (app operator + network operator) + Auth0 Roles created and assigned to both Auth0 operator user profiles
 - [ ] Anthropic API key generated
 - [ ] Slack app created with bot permissions and installed to workspace
 - [ ] Slack bot invited to the incident channel
@@ -567,5 +557,4 @@ Use this checklist to verify all integrations are configured:
 - [ ] Google Calendar API enabled with service account key
 - [ ] Gmail App Password generated (or alternative SMTP configured)
 - [ ] GitHub remediation repos created with config files
-- [ ] GitHub Personal Access Token generated
-- [ ] All environment variables populated in `backend/.env` and root `.env`
+- [ ] All environment variables populated in `backend/.env` and root `.env.local`
